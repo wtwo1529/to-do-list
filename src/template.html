@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div id="app">
+        <nav class="nav-bar">
+            <button type="button" class="nav-btn" id="add-task-btn">
+                <img src="components/icons/add-task.svg" width="29" height="29">
+                <p>Add Task</p>
+            </button>
+            <button type="button" class="nav-btn">
+                <img src="components/icons/search.svg" width="29" height="29">
+                <p>Search</p>
+            </button>
+            <button type="button" class="nav-btn">
+                <img src="components/icons/inbox.png" width="29" height="29">
+                <p>Inbox</p>
+            </button>
+            <button type="button" class="nav-btn">
+                <img src="components/icons/today.png" width="29" height="29">
+                <p>Today</p>
+            </button>
+            <button type="button" class="nav-btn">
+                <img src="components/icons/upcoming.png" width="29" height="29">
+                <p>Upcoming</p>
+            </button>
+            <button type="button" class="nav-btn">
+                <img src="components/icons/filters-labels.png" width="29" height="29">
+                <p>Filters & Labels</p>
+            </button>
+        </nav>
+        <div id="do-list-container">
+            <h1 id="do-list-title">
+                Today
+            </h1>
+            <div id="projects" class="do-list">
+                <h1 class="do-list-subtitle">My Projects</h1>
+                <button type="button" class="do-list-add-task-btn">
+                    <img src="components/icons/add-task-dolist.png" width="20" height="20">
+                    <p>Add Task</p>
+                </button>            </div>
+            <div id="team-projects" class="do-list">
+                <h1 class="do-list-subtitle">Team Projects</h1>
+                <button type="button" class="do-list-add-task-btn">
+                    <img src="components/icons/add-task-dolist.png" width="20" height="20">
+                    <p>Add Task</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
