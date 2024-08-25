@@ -18,19 +18,25 @@
                         <input required id="date-input" type="datetime-local">
                     </div>
                     <div class="modal-field-container" id="priority-container">
-                        <label>Priority</label>
+                        <p>Priority</p>
                         <div class="priority-radio-container">
-                            <input type="radio" name="priority" class="priority-radio" id="low-priority-radio" value="0">
-                            <label for="low-priority-radio" class="priority-radio-label">Low</label>
+                            <input checked="checked" type="radio" name="priority-radio-btn" class="priority-radio" id="low-priority-radio" value="0">
+                            <label for="low-priority-radio" class="priority-radio-label">
+                                <span>Low</span>
+                            </label>
                         </div>
                         
                         <div class="priority-radio-container">
-                            <input type="radio" name="priority" class="priority-radio" id="medium-priority-radio" value="1">
-                            <label for="medium-priority-radio" class="priority-radio-label">Medium</label>
+                            <input type="radio" name="priority-radio-btn" class="priority-radio" id="medium-priority-radio" value="1">
+                            <label for="medium-priority-radio" class="priority-radio-label">
+                                <span>Medium</span>
+                            </label>
                         </div>
                         <div class="priority-radio-container">
-                            <input type="radio" name="priority" class="priority-radio" id="high-priority-radio" value="1">
-                            <label for="high-priority-radio" class="priority-radio-label">High</label>
+                            <input type="radio" name="priority-radio-btn" class="priority-radio" id="high-priority-radio" value="2">
+                            <label for="high-priority-radio" class="priority-radio-label">
+                                <span>High</span>
+                            </label>
                         </div>                    
                     </div>
                 </div>

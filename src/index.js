@@ -28,7 +28,6 @@ window.onload = () => {
         document.querySelector('#modal').classList.remove('modal');
     })
     document.querySelector('#modal').addEventListener('click', (event) => {
-        event.preventDefault();
         event.stopPropagation();
         event.stopImmediatePropagation();
         return false;
