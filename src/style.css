@@ -65,6 +65,7 @@ body {
     align-items: center;
     gap: 15px;
     cursor: pointer;
+    background-color: white;
 }
 .nav-icon {
     width: 29;
@@ -100,6 +101,7 @@ body {
     gap: 10px;
     font-size: 16px;
     cursor: pointer;
+    background-color: white;
 }
 .do-add-btn {
     width: 20;
