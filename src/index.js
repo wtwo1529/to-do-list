@@ -1,5 +1,7 @@
 import "./style.css"; 
 
+import { default as getFormData } from './handleModal';
+
 window.onload = () => {
     
     let taskNameInput = document.querySelector('#task-name-input');
@@ -32,4 +34,6 @@ window.onload = () => {
         event.stopImmediatePropagation();
         return false;
     })
+
+    // document.querySelector('#modal-submit').addEventListener('click', getFormData);
 }

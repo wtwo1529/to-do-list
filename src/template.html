@@ -9,7 +9,7 @@
 <body>
     <div id="modal-root">
         <div id="modal">
-            <form class="modal-form">
+            <form id="add-task-form" class="modal-form">
                 <div class="modal-body">
                     <div class="modal-field-container">
                         <input required id="task-name-input" type="text">
@@ -20,7 +20,7 @@
                     <div class="modal-field-container" id="priority-container">
                         <p class="modal-subtitle">Priority</p>
                         <div class="priority-radio-container">
-                            <input checked="checked" type="radio" name="priority-radio-btn" class="priority-radio" id="low-priority-radio" value="0">
+                            <input type="radio" name="priority-radio-btn" class="priority-radio" id="low-priority-radio" value="0">
                             <label for="low-priority-radio" class="priority-radio-label">
                                 <span>Low</span>
                             </label>
@@ -42,7 +42,7 @@
                 </div>
             </form>
             <div id="modal-btn-container">
-                <button type="button" id="modal-submit">Add Task</button>
+                <button type="submit" id="modal-submit" form="add-task-form">Add Task</button>
             </div>
         </div>
     </div>

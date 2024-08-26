@@ -242,3 +242,7 @@ body {
 #modal-submit:hover {
     background-color: rgba(128, 128, 128, 0.25);
 }
+#modal-submit:active {
+    transition: background-color 300ms;
+    background-color: rgb(190, 127, 10);
+}
