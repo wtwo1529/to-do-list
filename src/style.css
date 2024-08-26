@@ -252,5 +252,5 @@ body {
     background-color: rgb(190, 127, 10);
 }
 .empty-field {
-    border: 1px red solid;
+    border: 2px red solid !important;
 }

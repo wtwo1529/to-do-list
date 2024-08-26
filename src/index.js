@@ -1,9 +1,9 @@
 import "./style.css"; 
 
-import { default as getFormData } from './handleModal';
+import { getFormData, validateForm, removeEmptyClassInput } from './handleModal';
 
 window.onload = () => {
-    
+    let inputElements = document.querySelectorAll('#modal input');    
     let taskNameInput = document.querySelector('#task-name-input');
     taskNameInput.value = 'Task name';
     taskNameInput.addEventListener("focus", (event) => {
@@ -34,6 +34,11 @@ window.onload = () => {
         event.stopImmediatePropagation();
         return false;
     })
+    document.querySelector('#modal-submit').addEventListener('click', (event) => {
+        event.preventDefault();
+        validateForm();
+    });
+    removeEmptyClassInput(inputElements);
 
     // document.querySelector('#modal-submit').addEventListener('click', getFormData);
 }
