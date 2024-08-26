@@ -3,16 +3,16 @@ import "./style.css";
 window.onload = () => {
     
     let taskNameInput = document.querySelector('#task-name-input');
-    taskNameInput.value = 'Event/Task';
+    taskNameInput.value = 'Task name';
     taskNameInput.addEventListener("focus", (event) => {
-        if (taskNameInput.value == 'Event/Task') 
+        if (taskNameInput.value == 'Task name') 
         {
             taskNameInput.value = '';
         }
     })
     taskNameInput.addEventListener("blur", (event) => {
         if (taskNameInput.value == '') {
-            taskNameInput.value = 'Event/Task';
+            taskNameInput.value = 'Task name';
         }
     })
 
