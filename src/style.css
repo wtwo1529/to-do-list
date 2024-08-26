@@ -120,6 +120,10 @@ body {
 .do-list-add-task-btn:hover {
     background-color: rgba(128, 128, 128, 0.25);
 }
+.do-list-add-task-btn:active {
+    transition: background-color 300ms;
+    background-color: rgba(128, 128, 128, 0.35);;
+}
 .do-add-btn {
     width: 1.25rem;
     height: 1.25rem;
@@ -240,9 +244,13 @@ body {
     font-size: 0.9rem;
 }
 #modal-submit:hover {
-    background-color: rgba(128, 128, 128, 0.25);
+    background-color: rgb(190, 127, 10, 0.6);
+    /* background-color: rgba(145, 116, 62, 0.781); */
 }
 #modal-submit:active {
     transition: background-color 300ms;
     background-color: rgb(190, 127, 10);
+}
+.empty-field {
+    border: 1px red solid;
 }
