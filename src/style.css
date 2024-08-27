@@ -93,6 +93,11 @@ body {
     font-size: 1.6rem;
     font-family: 'Poppins Medium';
 }
+.do-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
 .do-list {
     display: flex;
     flex-direction: column;
@@ -101,6 +106,25 @@ body {
 .do-list-subtitle {
     font-size: 1.2rem;
     font-family: 'Poppins Light';
+}
+.do-list-task {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 10px;
+    transition: background-color 300ms;
+    border-radius: 8px;
+    max-width: 25vw;
+}
+.do-list-task-header {
+    font-family: 'Poppins Light';
+    font-size: 1rem;
 }
 .do-list-add-task-btn {
     border: none;
