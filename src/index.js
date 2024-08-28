@@ -5,6 +5,7 @@ import { default as OpenCloseModal } from './openCloseModal';
 import { default as FormHandler } from './formHandler';
 import { default as RadioInput } from './radioInput';
 import FormValidator from "./formValidator";
+import { default as CompleteTask} from './completingTask';
 
 window.onload = () => {
     let modalRoot = document.querySelector('#modal-root');
@@ -34,5 +35,6 @@ window.onload = () => {
     let formHandler = new FormHandler(modalRoot, modal, addTaskBtns, form, inputElements, nonRadioInputs);
     let formValidator = new FormValidator(nonRadioInputs, inputElements);
     let radioInput = new RadioInput(radioInputs);
+    let completeTask = new CompleteTask()
     // document.querySelector('#modal-submit').addEventListener('click', getFormData);
 }

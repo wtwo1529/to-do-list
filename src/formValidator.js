@@ -12,6 +12,10 @@ class FormValidator {
         // let priority = document.querySelector('input[name="priority-radio-btn"]:checked');
         let valid = true;
         nonRadioInputs.forEach((element) => {
+            element.addEventListener('invalid', (e) => {
+                e.preventDefault();
+            });
+
             if (typeof element.value == "string") {
                 let value = element.value.trim();
                 if (value == '' || value == "Task name") {
@@ -28,6 +32,7 @@ class FormValidator {
         })
         return valid;
     };
+
     clearInvalid() {
 
     }

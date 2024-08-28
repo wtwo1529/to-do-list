@@ -1,0 +1,5 @@
+class FetchData {
+    static loadFromLocal() {
+        
+    }
+}

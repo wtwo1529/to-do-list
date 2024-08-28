@@ -102,12 +102,35 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+    max-width: 25vw;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 .do-list-subtitle {
     font-size: 1.2rem;
     font-family: 'Poppins Light';
 }
 .do-list-task {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 10px;
+    transition: background-color 300ms;
+    border-radius: 8px;
+    width: 100%;
+}
+.do-list-checkbox {
+    width: 22px;
+    height: 22px;
+}
+.do-list-task-container {
     border: none;
     display: flex;
     flex-direction: column;
@@ -120,7 +143,7 @@ body {
     padding: 5px 10px;
     transition: background-color 300ms;
     border-radius: 8px;
-    max-width: 25vw;
+    width: 100%;
 }
 .do-list-task-header {
     font-family: 'Poppins Light';
@@ -201,6 +224,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    gap: 10px;
 }
 #modal input {
     flex: auto;
@@ -228,17 +252,26 @@ body {
     border: 0;
     width: 100%;
 }
-#date-input {
+.datetime-input {
     border: 1px rgba(0, 0, 0, 0.3) solid;
+}
+#date-input {
+    width: auto;
+}
+#time-input {
+    width: auto;
 }
 .modal-subtitle {
     font-size: 1rem;
     font-family: 'Poppins Medium';
     color: rgba(95, 95, 95, 0.75);
+    margin-right: 10%;
 }
 #priority-container {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 1.2rem;
 }
 .priority-radio-container {
@@ -277,4 +310,10 @@ body {
 }
 .empty-field {
     border: 2px red solid !important;
+}
+.checked-task {
+    text-decoration: line-through !important;
+}
+.high-priority-task {
+
 }
