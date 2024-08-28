@@ -29,11 +29,11 @@ class ParseJson {
         container.appendChild(taskName);
         container.appendChild(taskDate);
         
-        if (json['time'] != "-1") {
-            let taskTime = document.createElement('p');
-            taskTime.textContent = json['time'];
-            container.append(taskTime)
-        }
+        // if (json['time'] != "-1") {
+        //     let taskTime = document.createElement('p');
+        //     taskTime.textContent = json['time'];
+        //     container.append(taskTime)
+        // }
         
         taskDiv.appendChild(checkBox);
         taskDiv.appendChild(container);

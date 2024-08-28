@@ -6,6 +6,7 @@ import { default as FormHandler } from './formHandler';
 import { default as RadioInput } from './radioInput';
 import FormValidator from "./formValidator";
 import { default as CompleteTask} from './completingTask';
+import { default as LoadStoreData } from './loadStoreData';
 
 window.onload = () => {
     let modalRoot = document.querySelector('#modal-root');
@@ -16,6 +17,7 @@ window.onload = () => {
     let taskNameInput = document.querySelector('#task-name-input');
     let nonRadioInputs = document.querySelectorAll('input:not([type="radio"])');
     let radioInputs = document.querySelectorAll('input[type="radio"]');
+    let toDoList = document.querySelector('.do-list');
 
     taskNameInput.value = 'Task name';
     taskNameInput.addEventListener("focus", (event) => {
@@ -35,6 +37,7 @@ window.onload = () => {
     let formHandler = new FormHandler(modalRoot, modal, addTaskBtns, form, inputElements, nonRadioInputs);
     let formValidator = new FormValidator(nonRadioInputs, inputElements);
     let radioInput = new RadioInput(radioInputs);
-    let completeTask = new CompleteTask()
+    let completeTask = new CompleteTask();
+    let loadStoreData = new LoadStoreData(toDoList);
     // document.querySelector('#modal-submit').addEventListener('click', getFormData);
 }

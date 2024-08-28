@@ -1,11 +1,12 @@
 class StoreData {
     constructor() {
-        this.keys = JSON.parse(localStorage.getItem('keys')) ?? new Array();
+        this.keys = localStorage.getItem('keys') ?? 0;
     }
     addToLocal(formDataJSON) {
         let data = JSON.stringify(formDataJSON);
-        localStorage.setItem(`${this.keys.length}`, data)
-        this.keys.push(this.keys.length);
+        localStorage.setItem(`${this.keys}`, data)
+        this.keys++;
+        localStorage.setItem('keys', this.keys);
     }
 }
 
