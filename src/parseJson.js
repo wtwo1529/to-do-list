@@ -2,7 +2,6 @@ import uncheckedBox from './components/icons/unchecked-box.png';
 import uncheckedCircle from './components/icons/unchecked-circle.png';
 import uncheckedCircleSVG from './components/icons/unchecked-circle.svg';
 
-import { compareAsc, format } from "date-fns";
 import { default as CompleteTask } from "./completingTask";
 
 class ParseJson {

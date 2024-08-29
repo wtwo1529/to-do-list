@@ -10,6 +10,11 @@ class FetchData {
         this.init();
     }
     init() {
+        this.dataArr = new Array();
+        this.dates = new Array();
+        this.sortedData = new Array();
+        this.dateToObj = new Map();
+
         this.loadFromLocal();
         this.sortDates();
     }
@@ -32,7 +37,6 @@ class FetchData {
                     var date = new Date(year, month-1, day);
                 }
                 dataJson['datetime'] = date;
-                console.log(dataJson['datetime']);
                 this.dates.push(date);
                 this.dateToObj.set(date, dataJson);
             }

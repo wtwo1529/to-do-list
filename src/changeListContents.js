@@ -1,30 +1,35 @@
 import { default as LoadStoreData } from './loadStoreData';
 
 class ChangeListContents {
-    constructor(toDoList, todayBtns, upcomingBtns) {
-        this.loadStoreData = new LoadStoreData(toDoList) 
+    constructor(FetchData, toDoList, todayBtns, pageHeader, upcomingBtns) {
+        this.fetchData = FetchData;
+        this.toDoList = toDoList;
         this.todayBtns = todayBtns;
+        this.pageHeader = pageHeader;
         this.upcomingBtns = upcomingBtns;
         this.init();
     }
     init() {
-        this.loadToday(this.todayBtns);
-        this.loadUpcoming(this.upcomingBtns);
+        this.loadToday(this.fetchData, this.toDoList, this.todayBtns);
+        this.loadUpcoming(this.fetchData, this.toDoList, this.upcomingBtns);
     }
     loadDefault() {
-        this.loadStoreData.loadTasksOfDate(new Date);        
+        this.pageHeader.textContent = 'Today';
+        LoadStoreData.loadTasksOfDate(this.fetchData, this.toDoList, new Date);        
     }
-    loadToday(btns) {
+    loadToday(fetchData, toDoList, btns) {
         btns.forEach(btn => {
             btn.addEventListener('click', () => {
-                this.loadStoreData.loadTasksOfDate(new Date);        
+                this.pageHeader.textContent = 'Today';
+                LoadStoreData.loadTasksOfDate(fetchData, toDoList, new Date);        
             })
         });
     }
-    loadUpcoming(btns) {
+    loadUpcoming(fetchData, toDoList, btns) {
         btns.forEach(btn => {
             btn.addEventListener('click', () => {
-                this.loadStoreData.loadTasksGreaterThanData(new Date);        
+                this.pageHeader.textContent = 'Upcoming';
+                LoadStoreData.loadTasksGreaterThanData(fetchData, toDoList, new Date);        
             })
         })
     }

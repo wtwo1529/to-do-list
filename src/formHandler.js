@@ -1,11 +1,13 @@
-import {default as FormValidator} from './formValidator';
-import {default as OpenCloseModal} from './openCloseModal';
-import {default as ModalEvents} from './modalEvents';
-import {default as ParseJson} from './parseJson';
-import {default as StoreData} from './storeFormJson';
+import { default as FormValidator } from './formValidator';
+import { default as OpenCloseModal } from './openCloseModal';
+import { default as ModalEvents } from './modalEvents';
+import { default as ParseJson } from './parseJson';
+import { default as StoreData } from './storeFormJson';
+import { default as LoadStoreData } from './loadStoreData';
 
 class FormHandler {
-    constructor(modalRoot, modal, openModalBtns, formElement, inputElements, nonRadioInputs) {
+    constructor(FetchData, modalRoot, modal, openModalBtns, formElement, inputElements, nonRadioInputs) {
+        this.fetchData = FetchData;
         this.modalRoot = modalRoot;
         this.modal = modal;
         this.openModalBtns = openModalBtns;
@@ -31,11 +33,18 @@ class FormHandler {
             "time": time.value || "-1",
             "priority": priority.value || "-1"
         }
+        // if (json['time'] != "-1") {
+        //     let hours = parseInt(dataJson['time'].substring(0,2));
+        //     let minutes = parseInt(dataJson['time'].substring(3,5))
+        //     var datetime = new Date(year, month-1, day, hours, minutes);
+        // }
+        // else {
+        //     var datetime = new Date(year, month-1, day);
+        // }
+        // json['datetime'] = datetime;
         return json;
     };
-    submitForm() {
-        let openCloseModal = new OpenCloseModal(this.modalRoot, this.modal, this.openModalBtns);
-        
+    submitForm() {        
         this.formElement.addEventListener('submit', (event) => {
             event.preventDefault();
             if (FormValidator.validateForm(this.nonRadioInputs)) {
@@ -44,8 +53,8 @@ class FormHandler {
                 let formDataJSON = this.getFormData();
                 let checkedRadios = document.querySelectorAll('input[type="radio"]:checked');
                 ModalEvents.clearInputs(this.nonRadioInputs, checkedRadios);
-                ParseJson.loadIntoDom(toDoList, formDataJSON);
                 this.storeData.addToLocal(formDataJSON);
+                LoadStoreData.loadTasksOfDate(this.fetchData, toDoList, new Date);
             }
         });
     }

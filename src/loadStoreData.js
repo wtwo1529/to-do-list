@@ -2,26 +2,27 @@ import { default as ParseJson } from './parseJson';
 import { default as FetchData } from './fetchFormJson'; 
 
 class LoadStoreData {
-    constructor(toDoList) {
-        this.fetchData = new FetchData;
+    constructor(FetchData, toDoList) {
+        this.fetchData = FetchData;
         this.toDoList = toDoList;        
     }
-    loadTasksOfDate(date) {
-        this.toDoList.innerHTML = '';
+    static loadTasksOfDate(fetchData, toDoList, date) {
+        fetchData.init();
         var date = date;
-        this.fetchData.sortedData.forEach((data) => {
-            if (data['datetime'].setHours(0,0,0,0) != date.setHours(0,0,0,0)) {
-                return;
+        toDoList.innerHTML = ' ';
+        fetchData.sortedData.forEach((data) => {
+            if (data['datetime'].getFullYear() === date.getFullYear() && data['datetime'].getMonth() === date.getMonth() && data['datetime'].getDate() === date.getDate()) {
+                ParseJson.loadIntoDom(toDoList, data);
             }
-            ParseJson.loadIntoDom(this.toDoList, data);
         })
     }
-    loadTasksGreaterThanData(date) {
-        this.toDoList.innerHTML = '';
+    static loadTasksGreaterThanData(fetchData, toDoList, date) {
+        fetchData.init();
+        toDoList.innerHTML = ' ';
         var date = date;
-        this.fetchData.sortedData.forEach((data) => {
-            if (data['datetime'] > date.setHours(0,0,0,0)) {
-                ParseJson.loadIntoDom(this.toDoList, data);
+        fetchData.sortedData.forEach((data) => {
+            if (data['datetime'] > date.setHours(23,59,59,59)) {
+                ParseJson.loadIntoDom(toDoList, data);
             }
         })
     }

@@ -8,6 +8,7 @@ import FormValidator from "./formValidator";
 import { default as CompleteTask} from './completingTask';
 import { default as ChangeListContents } from './changeListContents';
 import { default as AddTaskNav } from './add-btn-nav';
+import FetchData from "./fetchFormJson";
 
 window.onload = () => {
     let modalRoot = document.querySelector('#modal-root');
@@ -22,6 +23,7 @@ window.onload = () => {
     let todayPageBtns = document.querySelectorAll('#today-btn');
     let upcomingPageBtns = document.querySelectorAll('#upcoming-btn');
     let navAddTaskBtns = document.querySelectorAll('.nav-btn#add-task-btn')
+    let doListHeader = document.querySelector('#do-list-title')
 
     taskNameInput.value = 'Task name';
     taskNameInput.addEventListener("focus", (event) => {
@@ -36,13 +38,14 @@ window.onload = () => {
         }
     })
     
+    let fetchData = new FetchData();
     let modalEvents = new ModalEvents(modal, nonRadioInputs);
     let openCloseModal = new OpenCloseModal(modalRoot, modal, addTaskBtns);
-    let formHandler = new FormHandler(modalRoot, modal, addTaskBtns, form, inputElements, nonRadioInputs);
+    let formHandler = new FormHandler(fetchData, modalRoot, modal, addTaskBtns, form, inputElements, nonRadioInputs);
     let formValidator = new FormValidator(nonRadioInputs, inputElements);
     let radioInput = new RadioInput(radioInputs);
     let completeTask = new CompleteTask();
-    let changeListContents = new ChangeListContents(toDoList, todayPageBtns, upcomingPageBtns);
+    let changeListContents = new ChangeListContents(fetchData, toDoList, todayPageBtns, doListHeader, upcomingPageBtns);
     changeListContents.loadDefault();
     let addTaskNav = new AddTaskNav(modalRoot, modal, navAddTaskBtns);
 
