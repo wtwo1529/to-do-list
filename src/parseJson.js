@@ -7,6 +7,7 @@ import { default as CompleteTask } from "./completingTask";
 
 class ParseJson {
     static loadIntoDom(toDoList, json) {
+
         let taskDiv = document.createElement('div');
         taskDiv.classList.add('do-list-task');
 

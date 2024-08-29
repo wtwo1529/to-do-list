@@ -1,7 +1,9 @@
 import { default as OpenCloseModal } from './openCloseModal';
  
 class AddTaskNav {
-    constructor (addTaskBtns) {
+    constructor (modalRoot, modal, addTaskBtns) {
+        this.modalRoot = modalRoot;
+        this.modal = modal;
         this.addTaskBtns = addTaskBtns;
         this.init();
     }
@@ -10,7 +12,7 @@ class AddTaskNav {
     }
     SetClickBtn() {
         this.addTaskBtns.forEach((btn) => {
-            btn.addEventListener(('click'), () => OpenCloseModal.openModal())
+            btn.addEventListener(('click'), () => OpenCloseModal.openModal(this.modalRoot, this.modal))
         });
     }
 }

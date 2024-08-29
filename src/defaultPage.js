@@ -1,0 +1,5 @@
+class DefaultPage {
+    static loadDefaultPage() {
+        
+    }
+}
