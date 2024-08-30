@@ -5,7 +5,6 @@ class RadioInput {
     }
     init() {
         this.radioInputs.forEach((radioInput) => {
-            console.log(radioInput);
             radioInput.addEventListener('click', () => this.removeCheck(radioInput));
         })  
     }

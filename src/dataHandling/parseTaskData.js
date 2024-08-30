@@ -3,11 +3,12 @@ import checkedCircleSVG from '../components/icons/checked-circle.svg';
 
 import { default as CompleteTask } from "../to-do-list/completingTask";
 
-class ParseJson {
-    static loadIntoDom(toDoList, json) {
+class ParseTaskData {
+    static loadIntoDom(toDoList, taskData) {
 
         let taskDiv = document.createElement('div');
         taskDiv.classList.add('do-list-task');
+        taskDiv.dataset.key = `${taskData.key}`;
 
         CompleteTask.clickCheck(taskDiv);
 
@@ -15,7 +16,7 @@ class ParseJson {
         container.classList.add('do-list-task-container')
 
         let checkBox = document.createElement('img');
-        if (json['completed'] == "true") {
+        if (taskData.completed == "true") {
             checkBox.setAttribute('src', checkedCircleSVG);
         }
         else {
@@ -25,10 +26,10 @@ class ParseJson {
 
         let taskName = document.createElement('h1');
         taskName.classList.add('do-list-task-header');
-        taskName.textContent = json['task'];
+        taskName.textContent = taskData.name;
 
         let taskDate = document.createElement('p');
-        taskDate.textContent = json['datetime'].toString().substring(0, 21);
+        taskDate.textContent = taskData.dateObject.toString().substring(0, 21);
         
         container.appendChild(taskName);
         container.appendChild(taskDate);
@@ -40,4 +41,4 @@ class ParseJson {
     }
 }
 
-export default ParseJson;
+export default ParseTaskData;

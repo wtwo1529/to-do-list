@@ -1,6 +1,7 @@
 class TaskData {
-    constructor(dataJSON) {
+    constructor(dataJSON, key) {
         this.dataJSON = dataJSON;
+        this.key = key;
         this.name = dataJSON['task'];
         this.date = dataJSON['date'];
         this.datetime = dataJSON['datetime'];
@@ -29,7 +30,7 @@ class TaskData {
             "date": this.date,
             "time": this.time,
             "datetime": this.dateObject,
-            "priority": this.priority.value,
+            "priority": this.priority,
             "completed": this.completed,
         }
     }

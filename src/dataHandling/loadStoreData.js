@@ -1,4 +1,4 @@
-import { default as ParseJson } from './parseJson';
+import { default as ParseJson } from './parseTaskData';
 import { default as FetchData } from './fetchFormJson'; 
 
 class LoadStoreData {
