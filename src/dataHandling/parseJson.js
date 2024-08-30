@@ -1,6 +1,5 @@
-import uncheckedBox from './components/icons/unchecked-box.png';
-import uncheckedCircle from './components/icons/unchecked-circle.png';
-import uncheckedCircleSVG from './components/icons/unchecked-circle.svg';
+import uncheckedCircleSVG from '../components/icons/unchecked-circle.svg';
+import checkedCircleSVG from '../components/icons/checked-circle.svg';
 
 import { default as CompleteTask } from "../to-do-list/completingTask";
 
@@ -16,7 +15,12 @@ class ParseJson {
         container.classList.add('do-list-task-container')
 
         let checkBox = document.createElement('img');
-        checkBox.setAttribute('src', uncheckedCircleSVG);
+        if (json['completed'] == "true") {
+            checkBox.setAttribute('src', checkedCircleSVG);
+        }
+        else {
+            checkBox.setAttribute('src', uncheckedCircleSVG);
+        }
         checkBox.classList.add('do-list-checkbox');
 
         let taskName = document.createElement('h1');

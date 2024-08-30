@@ -32,7 +32,8 @@ class FormHandler {
             "task": taskName,
             "date": date,
             "time": time.value || "-1",
-            "priority": priority.value || "-1"
+            "priority": priority.value || "-1",
+            "completed": "false"
         }
         // if (json['time'] != "-1") {
         //     let hours = parseInt(dataJson['time'].substring(0,2));

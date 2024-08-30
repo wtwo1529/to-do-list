@@ -1,16 +1,15 @@
 import { default as ParseJson } from './parseJson';
+import { default as TaskData } from './taskData';
 import { compareAsc, format } from 'date-fns';
 
 class FetchData {
     constructor() {
-        this.data = new Array();
         this.dates = new Array();
         this.sortedData = new Array();
         this.dateToObj = new Map();
         this.init();
     }
     init() {
-        this.data = new Array();
         this.dates = new Array();
         this.sortedData = new Array();
         this.dateToObj = new Map();
@@ -24,21 +23,11 @@ class FetchData {
             for (let i = 0; i < amtOfData; i++) {
                 let dataString = localStorage.getItem(`${i}`);
                 let dataJson = JSON.parse(dataString);
-                this.data.push(dataJson);
-                let year = parseInt(dataJson['date'].substring(0,4));
-                let month = parseInt(dataJson['date'].substring(5,7));
-                let day = parseInt(dataJson['date'].substring(8,10));
-                if (dataJson['time'] != "-1") {
-                    let hours = parseInt(dataJson['time'].substring(0,2));
-                    let minutes = parseInt(dataJson['time'].substring(3,5))
-                    var date = new Date(year, month-1, day, hours, minutes);
-                }
-                else {
-                    var date = new Date(year, month-1, day);
-                }
-                dataJson['datetime'] = date;
+                let task = new TaskData(dataJson)
+                let date = task.dateObject;
                 this.dates.push(date);
-                this.dateToObj.set(date, dataJson);
+                this.dateToObj.set(date, task);
+                console.log(dataJson);
             }
         }
     }

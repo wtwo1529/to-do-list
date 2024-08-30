@@ -1,5 +1,5 @@
-import checkedCircle from './components/icons/checked-circle.svg';
-import uncheckedCircle from './components/icons/unchecked-circle.svg';
+import checkedCircle from '../components/icons/checked-circle.svg';
+import uncheckedCircle from '../components/icons/unchecked-circle.svg';
 
 class CompleteTask {
     init() {

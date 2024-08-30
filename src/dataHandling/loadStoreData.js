@@ -11,7 +11,7 @@ class LoadStoreData {
         var date = date;
         toDoList.innerHTML = ' ';
         fetchData.sortedData.forEach((data) => {
-            if (data['datetime'].getFullYear() === date.getFullYear() && data['datetime'].getMonth() === date.getMonth() && data['datetime'].getDate() === date.getDate()) {
+            if (data.dateObject.getFullYear() === date.getFullYear() && data.dateObject.getMonth() === date.getMonth() && data.dateObject.getDate() === date.getDate()) {
                 ParseJson.loadIntoDom(toDoList, data);
             }
         })
@@ -21,7 +21,7 @@ class LoadStoreData {
         toDoList.innerHTML = ' ';
         var date = date;
         fetchData.sortedData.forEach((data) => {
-            if (data['datetime'] > date.setHours(23,59,59,59)) {
+            if (data.dateObject > date.setHours(23,59,59,59)) {
                 ParseJson.loadIntoDom(toDoList, data);
             }
         })
