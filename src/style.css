@@ -81,28 +81,35 @@ body {
     width: 1.8rem;
     height: 1.8rem;
 }
-#do-list-container {
+/* #do-list-container {
     flex-grow: 4;
     margin-top: min(8%, 55px);
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
     min-width: 30vw;
-}
+} */
 #do-list-title {
     font-size: 1.6rem;
     font-family: 'Poppins Medium';
 }
+#do-list-container {
+    margin-top: min(8%, 55px);
+    flex-grow: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 25vw;
+}
 .do-list-container {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.5rem;
 }
 .do-list {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    max-width: 25vw;
+    width: 100%;
     overflow-y: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
