@@ -7,7 +7,7 @@ import { default as RadioInput } from './modal/radioInput';
 import FormValidator from "./modal/formValidator";
 import { default as CompleteTask} from './to-do-list/completingTask';
 import { default as ChangeListContents } from './to-do-list/changeListContents';
-import { default as AddTaskNav } from './add-btn-nav';
+import { default as AddTaskNav } from './nav-bar/add-btn-nav';
 import FetchData from "./dataHandling/fetchFormJson";
 
 window.onload = () => {

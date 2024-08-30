@@ -1,5 +1,0 @@
-class DefaultPage {
-    static loadDefaultPage() {
-        
-    }
-}
