@@ -19,9 +19,9 @@ class RadioInput {
         
     }
     removeCheck(radioInput) {
-        if (radioInput.checked) {
-            radioInput.checked = false;
-        }
+        // if (radioInput.checked) {
+        //     radioInput.checked = false;
+        // }
     }
 }
 
