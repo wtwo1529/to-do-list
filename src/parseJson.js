@@ -24,7 +24,7 @@ class ParseJson {
         taskName.textContent = json['task'];
 
         let taskDate = document.createElement('p');
-        taskDate.textContent = json['datetime']
+        taskDate.textContent = json['datetime'].toString().substring(0, 21);
         
         container.appendChild(taskName);
         container.appendChild(taskDate);
