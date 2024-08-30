@@ -1,4 +1,4 @@
-import { default as LoadStoreData } from './loadStoreData';
+import { default as LoadStoreData } from '../dataHandling/loadStoreData';
 
 class ChangeListContents {
     constructor(FetchData, toDoList, todayBtns, pageHeader, upcomingBtns) {

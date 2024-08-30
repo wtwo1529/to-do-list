@@ -1,9 +1,9 @@
 import { default as FormValidator } from './formValidator';
 import { default as OpenCloseModal } from './openCloseModal';
 import { default as ModalEvents } from './modalEvents';
-import { default as ParseJson } from './parseJson';
+import { default as ParseJson } from '../dataHandling/parseJson';
 import { default as StoreData } from './storeFormJson';
-import { default as LoadStoreData } from './loadStoreData';
+import { default as LoadStoreData } from '../dataHandling/loadStoreData';
 
 class FormHandler {
     constructor(FetchData, modalRoot, modal, openModalBtns, formElement, inputElements, nonRadioInputs, listHeader) {

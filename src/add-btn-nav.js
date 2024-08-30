@@ -1,4 +1,4 @@
-import { default as OpenCloseModal } from './openCloseModal';
+import { default as OpenCloseModal } from './modal/openCloseModal';
  
 class AddTaskNav {
     constructor (modalRoot, modal, addTaskBtns) {

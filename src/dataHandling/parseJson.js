@@ -2,7 +2,7 @@ import uncheckedBox from './components/icons/unchecked-box.png';
 import uncheckedCircle from './components/icons/unchecked-circle.png';
 import uncheckedCircleSVG from './components/icons/unchecked-circle.svg';
 
-import { default as CompleteTask } from "./completingTask";
+import { default as CompleteTask } from "../to-do-list/completingTask";
 
 class ParseJson {
     static loadIntoDom(toDoList, json) {

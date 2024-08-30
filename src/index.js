@@ -1,14 +1,14 @@
 import "./style.css"; 
 
-import { default as ModalEvents } from './modalEvents';
-import { default as OpenCloseModal } from './openCloseModal';
-import { default as FormHandler } from './formHandler';
-import { default as RadioInput } from './radioInput';
-import FormValidator from "./formValidator";
-import { default as CompleteTask} from './completingTask';
-import { default as ChangeListContents } from './changeListContents';
+import { default as ModalEvents } from './modal/modalEvents';
+import { default as OpenCloseModal } from './modal/openCloseModal';
+import { default as FormHandler } from './modal/formHandler';
+import { default as RadioInput } from './modal/radioInput';
+import FormValidator from "./modal/formValidator";
+import { default as CompleteTask} from './to-do-list/completingTask';
+import { default as ChangeListContents } from './to-do-list/changeListContents';
 import { default as AddTaskNav } from './add-btn-nav';
-import FetchData from "./fetchFormJson";
+import FetchData from "./dataHandling/fetchFormJson";
 
 window.onload = () => {
     let modalRoot = document.querySelector('#modal-root');
