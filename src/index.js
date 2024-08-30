@@ -41,7 +41,7 @@ window.onload = () => {
     let fetchData = new FetchData();
     let modalEvents = new ModalEvents(modal, nonRadioInputs);
     let openCloseModal = new OpenCloseModal(modalRoot, modal, addTaskBtns);
-    let formHandler = new FormHandler(fetchData, modalRoot, modal, addTaskBtns, form, inputElements, nonRadioInputs);
+    let formHandler = new FormHandler(fetchData, modalRoot, modal, addTaskBtns, form, inputElements, nonRadioInputs, doListHeader);
     let formValidator = new FormValidator(nonRadioInputs, inputElements);
     let radioInput = new RadioInput(radioInputs);
     let completeTask = new CompleteTask();

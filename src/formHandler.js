@@ -6,7 +6,7 @@ import { default as StoreData } from './storeFormJson';
 import { default as LoadStoreData } from './loadStoreData';
 
 class FormHandler {
-    constructor(FetchData, modalRoot, modal, openModalBtns, formElement, inputElements, nonRadioInputs) {
+    constructor(FetchData, modalRoot, modal, openModalBtns, formElement, inputElements, nonRadioInputs, listHeader) {
         this.fetchData = FetchData;
         this.modalRoot = modalRoot;
         this.modal = modal;
@@ -14,6 +14,7 @@ class FormHandler {
         this.formElement = formElement;
         this.inputElements = inputElements;
         this.nonRadioInputs = nonRadioInputs;
+        this.listHeader = listHeader; 
         
         this.storeData = new StoreData;
 
@@ -54,7 +55,12 @@ class FormHandler {
                 let checkedRadios = document.querySelectorAll('input[type="radio"]:checked');
                 ModalEvents.clearInputs(this.nonRadioInputs, checkedRadios);
                 this.storeData.addToLocal(formDataJSON);
-                LoadStoreData.loadTasksOfDate(this.fetchData, toDoList, new Date);
+                if (this.listHeader.textContent == "Today") {
+                    LoadStoreData.loadTasksOfDate(this.fetchData, toDoList, new Date);
+                }
+                else if (this.listHeader.textContent == "Upcoming") {
+                    LoadStoreData.loadTasksGreaterThanData(this.fetchData, toDoList, new Date);
+                }
             }
         });
     }
