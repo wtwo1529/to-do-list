@@ -9,6 +9,7 @@ import { default as CompleteTask} from './to-do-list/completingTask';
 import { default as ChangeListContents } from './to-do-list/changeListContents';
 import { default as AddTaskNav } from './nav-bar/add-btn-nav';
 import FetchData from "./dataHandling/fetchFormJson";
+import NavBar from "./nav-bar/nav-bar";
 
 window.onload = () => {
     let modalRoot = document.querySelector('#modal-root');
@@ -48,6 +49,11 @@ window.onload = () => {
     let changeListContents = new ChangeListContents(fetchData, toDoList, todayPageBtns, doListHeader, upcomingPageBtns);
     changeListContents.loadDefault();
     let addTaskNav = new AddTaskNav(modalRoot, modal, navAddTaskBtns);
+    
+    let navContainer = document.querySelector('.mobile-nav-container');
+    let openNavBtns = document.querySelectorAll('#sidebar-menu-btn')
+    
+    let navBar = new NavBar(navContainer, openNavBtns, navAddTaskBtns);
 
     // document.querySelector('#modal-submit').addEventListener('click', getFormData);
 }
