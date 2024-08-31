@@ -75,9 +75,6 @@
             </button>
         </nav>
         <nav id="mobile-nav-bar" class="nav-bar">
-            <button type="button" class="nav-btn mobile-nav-btn" id="sidebar-menu-btn">
-                <img class="nav-icon" src="components/icons/sidebar-menu.svg">
-            </button>
             <button type="button" class="nav-btn mobile-nav-btn" id="add-task-btn">
                 <img class="nav-icon" src="components/icons/add-task.svg">
             </button>
@@ -99,9 +96,14 @@
             </button>
         </nav>
         <div id="do-list-container">
-            <h1 id="do-list-title">
-                Today
-            </h1>
+            <div id="do-list-header">
+                <button type="button" class="nav-btn mobile-nav-btn" id="sidebar-menu-btn">
+                    <img class="nav-icon" src="components/icons/sidebar-menu.svg">
+                </button>
+                <h1 id="do-list-title">
+                    Today
+                </h1>
+            </div>
             <div id="projects" class="do-list-container">
                 <div id="do-list-nav">
                     <h1 class="do-list-subtitle">My Projects</h1>
