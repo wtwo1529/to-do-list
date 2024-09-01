@@ -29,6 +29,7 @@ class ParseTaskData {
         taskName.textContent = taskData.name;
 
         let taskDate = document.createElement('p');
+        taskDate.classList.add('do-list-task-subtitle');
         taskDate.textContent = taskData.dateObject.toString().substring(0, 21);
         
         container.appendChild(taskName);

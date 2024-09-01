@@ -41,24 +41,18 @@ body {
     display: flex;
     flex-direction: row;
     border-radius: 6px;
-    height: 65vh;
-    width: 60vw;
+    height: 100%;
+    width: 100%;
     background-color: white;
     z-index: 1;
     object-fit: contain;
     overflow-x: auto;
 }
-
 @media only screen and (max-width: 600px) {
     #app {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: row;
-      gap: 3%;
+        gap: 3%;
     }
 }
-
 .nav-bar {
     flex-grow: 1;
     display: flex;
@@ -75,7 +69,7 @@ body {
 
 .nav-btn {
     border: none;
-    font-size: 16px;
+    font-size: 1rem;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -96,6 +90,28 @@ body {
     width: 1.8rem;
     height: 1.8rem;
 }
+
+@media only screen and (max-width:961px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    
+}
+@media only screen and (max-width:1025px) { 
+    /* big landscape tablets, laptops, and desktops */ 
+    .nav-btn {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width:1281px) {
+     /* hi-res laptops and desktops */
+    .nav-bar {
+        margin-top: 12.5vh;
+    }
+    .nav-btn {
+        font-size: 1.4rem;
+    }
+}
+
 
 @media only screen and (max-width: 600px) {
     .mobile-nav-container {
@@ -129,6 +145,7 @@ body {
         border-radius: 6px;
     }
 }
+
 #do-list-header {
     width: 30vw;
     display: flex;
@@ -195,6 +212,21 @@ body {
         margin-right: 5vw;
     }
 }
+
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    #do-list-title {
+        font-size: 2rem;
+    }
+    .do-list-container {
+        width: 75%;
+    }
+    #do-list-nav {
+        width: 100%;
+    }
+}
+
+
 .do-list {
     display: flex;
     flex-direction: column;
@@ -242,6 +274,12 @@ body {
         width: 100%;
     }
 }
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    .do-list-task, .do-list-task-container {
+        width: 100%;
+    }
+}
 .do-list-task-header {
     font-family: 'Poppins Light';
     font-size: 1rem;
@@ -281,6 +319,27 @@ body {
         width: 100%;
     }
 }
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    #do-list-nav {
+        width: 100%;
+    }
+    .do-list-subtitle {
+        font-size: 1.4rem;
+    }
+    .do-list-task-header {
+        font-family: 'Poppins Light';
+        font-size: 1.2rem;
+        height: 10%;
+    }
+    .do-list-task-subtitle {
+        font-size: 1.1rem;
+    }
+    .do-list-checkbox {
+        width: 25px;
+        height: 25px;
+    }
+}
 .do-list-add-task-btn {
     border: none;
     display: flex;
@@ -313,6 +372,23 @@ body {
         width: 100%;
     }
 }
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    #do-list-options-img {
+        width: 25px;
+        height: 25px;
+    }
+    .do-list-add-task-btn {
+        width: 100%;
+        font-size: 1.2rem;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .do-add-btn {
+        width: 25px;
+        height: 25px;
+    }
+}
 #modal-root {
     width: 100%;
     height: 100%;
@@ -332,7 +408,7 @@ body {
     background-color: white;
     flex-direction: column;
     gap: 20px;
-    font-size: 16px;
+    font-size: 1rem;
     animation: fadein 0.5s;
 }
 .modal-form {
@@ -420,6 +496,8 @@ body {
 .priority-radio-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     box-shadow: none;
     gap: 3px;
 }
@@ -442,6 +520,26 @@ body {
     color: white;
     font-family: 'Poppins Medium';
     font-size: 0.9rem;
+}
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    #modal input{
+        font-size: 1.1rem;
+    }
+    .modal-subtitle {
+        font-size: 1.1rem;
+    }
+    .priority-radio {
+        width: 16px;
+        height: 16px;
+    }
+    .priority-radio-label {
+        font-size: 1.1rem;
+    }
+    #modal-submit {
+        font-size: 1.1rem;
+    }
+
 }
 #modal-submit:hover {
     background-color: rgb(190, 127, 10, 0.6);
