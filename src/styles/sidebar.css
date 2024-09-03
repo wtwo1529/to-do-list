@@ -45,7 +45,7 @@
         overflow: hidden;
     }
 }
-@media only screen and (min-width:601px)  { 
+@media only screen and (min-width:600px) and (max-width: 961px) { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */ 
     .nav-bar {
         width: 20vw;
@@ -58,7 +58,7 @@
         font-size: 1.3rem;
     }
 }
-@media only screen and (min-width:962px) { 
+@media only screen and (min-width:961px) and (max-width: 1025px) { 
     /* big landscape tablets, laptops, and desktops */ 
     .nav-bar {
         width: 20vw;

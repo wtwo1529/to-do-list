@@ -55,18 +55,15 @@
         width: 100%;
     }
 }
-@media (min-width:1281px) {
-    /* hi-res laptops and desktops */
-    .do-list-task, .do-list-task-container {
-        width: 100%;
-    }
-}
 .do-list-task-header {
     font-size: 1rem;
     height: 10%;
 }
 @media (min-width:1281px) {
     /* hi-res laptops and desktops */
+    .do-list-task, .do-list-task-container {
+        width: 100%;
+    }
     .do-list-subtitle {
         font-size: 1.4rem;
     }
