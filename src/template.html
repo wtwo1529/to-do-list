@@ -69,10 +69,19 @@
                 <img class="nav-icon" src="components/icons/upcoming.png">
                 <p>Upcoming</p>
             </button>
-            <button type="button" class="nav-btn">
-                <img class="nav-icon" src="components/icons/filters-labels.png">
-                <p>Filters & Labels</p>
-            </button>
+            <div id="filters-labels-container">
+                <button type="button" id="filters-labels-btn" class="nav-btn">
+                    <img class="nav-icon" src="components/icons/filters-labels.png">
+                    <p>Filters & Labels</p>
+                </button>
+                <dialog id="filters-labels-dialog">
+                    <button>
+                        <img class="btn-icon" src="./components/icons/completed-icon.svg">
+                        <p class="btn-text">Completed</p>
+                    </button>
+                </dialog>
+
+            </div>
         </nav>
         <div class="mobile-nav-container">
             <nav id="mobile-nav-bar" class="nav-bar">
@@ -100,6 +109,9 @@
                     <img class="nav-icon" src="components/icons/filters-labels.png">
                     <p class="mobile-nav-txt">Filters & Labels</p>
                 </button>
+                <dialog id="filters-labels">
+                    <button>Completed</button>
+                </dialog>
             </nav>
         </div>
         <div id="do-list-container">
@@ -121,7 +133,7 @@
                                 <img class="options-btn-img" src="./components/icons/trash.svg">
                                 <p class="options-btn-txt">Clear Finished Tasks</p>
                             </button>
-                            <button type="button" class="options-btn">
+                            <button type="button" id="clear-tasks-btn" class="options-btn">
                                 <img class="options-btn-img" src="./components/icons/trash.svg">
                                 <p class="options-btn-txt">Clear All Tasks</p>
                             </button>

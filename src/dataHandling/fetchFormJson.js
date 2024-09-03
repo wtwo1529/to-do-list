@@ -1,6 +1,5 @@
-import { default as ParseJson } from '../to-do-list/parseTaskData';
 import { default as TaskData } from './taskData';
-import { compareAsc, format } from 'date-fns';
+import { compareAsc } from 'date-fns';
 
 class FetchData {
     constructor() {
@@ -26,11 +25,15 @@ class FetchData {
             localStorage.removeItem('keys')
             let id = 0;
             let keys = 0;
+            var i = 0;
             for (const property in amtOfData) {
                 if (property == "debug" || property == "keys") {
+                    i++;
                     continue;
                 }
                     let dataJson = JSON.parse(amtOfData[property]);
+                    localStorage.removeItem(`${i}`);
+                    localStorage.setItem(`${id}`, JSON.stringify(dataJson));
                     let task = new TaskData(dataJson, id);
                     let date = task.dateObject;
                     this.data.push(task);
@@ -39,7 +42,10 @@ class FetchData {
                     this.idToObj.set(id, this.data[this.data.length - 1]);
                     id++;
                     keys++;
+                    i++;
             }
+            console.log("END")
+
             localStorage.setItem('keys', `${keys}`);
         }
     }

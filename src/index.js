@@ -35,13 +35,16 @@ window.onload = () => {
     
     let navAddTaskBtns = document.querySelectorAll('.nav-btn#add-task-btn')
     let navContainer = document.querySelector('.mobile-nav-container');
-    let openNavBtns = document.querySelectorAll('#sidebar-menu-btn')
-    let navBar = new NavBar(modalRoot, modal, navContainer, openNavBtns, navAddTaskBtns);
+    let openNavBtns = document.querySelectorAll('#sidebar-menu-btn');
+    let filtersLabelsDialog = document.querySelector('#filters-labels-dialog');
+    let openFiltersLabelsBtns = document.querySelectorAll('#filters-labels-btn');
+    let navBar = new NavBar(modalRoot, modal, navContainer, openNavBtns, navAddTaskBtns, filtersLabelsDialog, openFiltersLabelsBtns);
     
-    let dialogElement = document.querySelector('#do-list-options');
-    let openDialogBtns = document.querySelectorAll('#do-list-options-btn');
+    let optionsDialog = document.querySelector('#do-list-options');
+    let openOptionsBtns = document.querySelectorAll('#do-list-options-btn');
     let clearCheckedTaskBtns = document.querySelectorAll('#clear-finished-tasks-btn')
-    let optionsMenu = new OptionsMenu(fetchData, dialogElement, openDialogBtns, clearCheckedTaskBtns);
+    let clearTasksBtns = document.querySelectorAll('#clear-tasks-btn');
+    let optionsMenu = new OptionsMenu(fetchData, optionsDialog, openOptionsBtns, clearCheckedTaskBtns, clearTasksBtns);
 
     // document.querySelector('#modal-submit').addEventListener('click', getFormData);
 }

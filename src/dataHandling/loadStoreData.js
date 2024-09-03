@@ -10,7 +10,7 @@ class LoadStoreData {
         var date = date;
         toDoList.innerHTML = ' ';
         fetchData.sortedData.forEach((data) => {
-            if (!data['completed']) {
+            if (data['completed'] == "false") {
                 if (data.dateObject.getFullYear() === date.getFullYear() && data.dateObject.getMonth() === date.getMonth() && data.dateObject.getDate() === date.getDate()) {
                     ParseJson.loadIntoDom(toDoList, data, true);
                 }
@@ -22,7 +22,7 @@ class LoadStoreData {
         toDoList.innerHTML = ' ';
         var date = date;
         fetchData.sortedData.forEach((data) => {
-            if (!data['completed']) {
+            if (data['completed'] == "false") {
                 if (data.dateObject > date.setHours(23,59,59,59)) {
                     ParseJson.loadIntoDom(toDoList, data, false, true);
                 }

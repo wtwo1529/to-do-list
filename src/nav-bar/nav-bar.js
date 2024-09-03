@@ -1,12 +1,14 @@
 import { default as OpenCloseMobileNav } from './openCloseMobile';
 import { default as AddTaskNav } from './add-btn-nav';
+import { default as OpenCloseDialog } from '../options-menu/openCloseDialog';
 
 class NavBar {
-    constructor(modalRoot, modal, navContainer, openNavBtns, addTaskBtns) {
+    constructor(modalRoot, modal, navContainer, openNavBtns, addTaskBtns, dialogElement, openDialogBtns) {
         this.navContainer = navContainer;
         this.openNavBtns = openNavBtns;
         this.addTaskBtns = addTaskBtns;
         this.addTaskNav = new AddTaskNav(modalRoot, modal, addTaskBtns)
+        this.OpenCloseDialog = new OpenCloseDialog(dialogElement, openDialogBtns)
         this.init();
     }
     init() {

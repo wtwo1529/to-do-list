@@ -4,7 +4,6 @@ class TaskData {
         this.id = id;
         this.name = dataJSON['task'];
         this.date = dataJSON['date'];
-        this.datetime = dataJSON['datetime'];
         this.time = dataJSON['time'] || "-1";
         this.dateObject = this.getDateObj();
         this.priority = dataJSON['priority'];
@@ -29,10 +28,10 @@ class TaskData {
             "task": this.name,
             "date": this.date,
             "time": this.time,
-            "datetime": this.dateObject,
             "priority": this.priority,
             "completed": this.completed,
         }
+        return this.dataJSON;
     }
 }
 

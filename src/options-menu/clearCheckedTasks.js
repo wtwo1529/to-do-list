@@ -8,7 +8,9 @@ class ClearCheckedTasks {
     }
     completeTask(checkedTask) {
         let id = parseInt(checkedTask.dataset.id);
-        this.fetchData.idToObj.get(id).completed = true;
+        this.fetchData.idToObj.get(id).completed = "true";
+        let dataJSON = this.fetchData.idToObj.get(id).updateJson();
+        localStorage.setItem(`${id}`, JSON.stringify(dataJSON));
     }
     removeFromDOM(checkedTask) {
         checkedTask.parentNode.removeChild(checkedTask);
