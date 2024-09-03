@@ -11,7 +11,6 @@ class TaskData {
         this.completed = dataJSON['completed'];
     }
     getDateObj() {
-        console.log(this.date);
         let year = parseInt(this.date.substring(0,4));
         let month = parseInt(this.date.substring(5,7));
         let day = parseInt(this.date.substring(8,10));

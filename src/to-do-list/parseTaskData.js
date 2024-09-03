@@ -9,7 +9,7 @@ class ParseTaskData {
     static loadIntoDom(toDoList, taskData, today=false, upcoming=false) {
         let taskDiv = document.createElement('div');
         taskDiv.classList.add('do-list-task');
-        taskDiv.dataset.key = `${taskData.id}`;
+        taskDiv.dataset.id = `${taskData.id}`;
 
         CompleteTask.clickCheck(taskDiv);
 

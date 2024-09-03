@@ -8,6 +8,7 @@ class FetchData {
         this.dates = new Array();
         this.sortedData = new Array();
         this.dateToObj = new Map();
+        this.idToObj = new Map();
         this.init();
     }
     init() {
@@ -18,7 +19,6 @@ class FetchData {
 
         this.loadFromLocal();
         this.sortDates();
-        console.log(this.sortedData);
     }
     loadFromLocal() {
         let amtOfData = {...localStorage} ?? false;
@@ -35,7 +35,8 @@ class FetchData {
                     let date = task.dateObject;
                     this.data.push(task);
                     this.dates.push(date);
-                    this.dateToObj.set(date, task);
+                    this.dateToObj.set(date, this.data[this.data.length - 1]);
+                    this.idToObj.set(id, this.data[this.data.length - 1]);
                     id++;
                     keys++;
             }
