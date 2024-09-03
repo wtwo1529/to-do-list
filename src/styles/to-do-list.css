@@ -74,6 +74,56 @@
         margin-right: 5vw;
     }
 }
+@media only screen and (max-width:961px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    #do-list-nav {
+        width: 100%;
+    }
+    #do-list-header {
+        width: 100%;
+        gap: 5%;
+        display: flex;
+        align-items: center;
+    }
+    #do-list-title {
+        font-size: 2rem;
+        /* font-family: 'Poppins Medium'; */
+        margin-right: auto;
+    }
+    .do-list-container {
+        width: 90%;
+        height: 100%;
+        margin-right: 5vw;
+    }
+    .do-list-subtitle {
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (max-width:1025px) { 
+    /* big landscape tablets, laptops, and desktops */ 
+    #do-list-nav {
+        width: 100%;
+    }
+    #do-list-header {
+        width: 100%;
+        gap: 5%;
+        display: flex;
+        align-items: center;
+    }
+    #do-list-title {
+        font-size: 2.4rem;
+        /* font-family: 'Poppins Medium'; */
+        margin-right: auto;
+    }
+    .do-list-container {
+        width: 90%;
+        height: 100%;
+        margin-right: 5vw;
+    }
+    .do-list-subtitle {
+        font-size: 1.7rem;
+    }
+}
 @media (min-width:1281px) {
     /* hi-res laptops and desktops */
     #do-list-title {

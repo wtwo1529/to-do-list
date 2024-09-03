@@ -31,6 +31,32 @@
         width: 100%;
     }
 }
+@media only screen and (max-width:961px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .do-list-add-task-btn {
+        width: 100%;
+    }
+    .do-add-text {
+        font-size: 1.3rem;
+    }
+    .do-add-btn {
+        width: 25px;
+        height: 25px;
+    }
+}
+@media only screen and (max-width:1025px) { 
+    /* big landscape tablets, laptops, and desktops */ 
+    .do-list-add-task-btn {
+        width: 100%;
+    }
+    .do-add-text {
+        font-size: 1.5rem;
+    }
+    .do-add-btn {
+        width: 30px;
+        height: 30px;
+    }
+}
 @media (min-width:1281px) {
     /* hi-res laptops and desktops */
     .do-list-add-task-btn {

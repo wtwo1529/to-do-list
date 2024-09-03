@@ -1,12 +1,11 @@
+import "./styles/style.css" 
 import "./styles/list-add-btn.css";
-import "./styles/list-nav.css" 
 import "./styles/list-options.css" 
-import "./styles/mobile-nav-bar.css" 
+import "./styles/mobile-sidebar.css" 
 import "./styles/modal.css" 
 import "./styles/sidebar.css"
 import "./styles/task.css" 
 import "./styles/to-do-list.css"
-import "./styles/style.css" 
 
 import { default as FetchData } from "./dataHandling/fetchFormJson";
 import { default as NavBar } from "./nav-bar/nav-bar";

@@ -23,7 +23,7 @@
     transition: background-color 300ms;
 }
 .nav-btn:hover {
-    background-color: rgba(128, 128, 128, 0.25);
+    background-color: var(--background-color-hover);
     transition: background-color 300ms;
     border-radius: 6px;
 }
@@ -40,14 +40,35 @@
         border-radius: 100px;
         padding: 10px 10px;
     }
+    .nav-bar {
+        display: none;
+        overflow: hidden;
+    }
 }
 @media only screen and (max-width:961px)  { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    .nav-bar {
+        width: 20vw;
+        margin-top: 10vh;
+        margin-left: 10px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .nav-bar p {
+        font-size: 1.3rem;
+    }
 }
 @media only screen and (max-width:1025px) { 
     /* big landscape tablets, laptops, and desktops */ 
-    .nav-btn {
-        font-size: 1.2rem;
+    .nav-bar {
+        width: 20vw;
+        margin-top: 10vh;
+        margin-left: 10px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .nav-bar p {
+        font-size: 1.7rem;
     }
 }
 @media (min-width:1281px) {

@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system;
+    --background-color-hover: rgba(128, 128, 128, 0.25); 
 }
 
 html, body {
