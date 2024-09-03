@@ -1,7 +1,6 @@
 import { default as FormValidator } from './formValidator';
 import { default as OpenCloseModal } from './openCloseModal';
 import { default as ModalEvents } from './modalEvents';
-import { default as ParseJson } from '../dataHandling/parseTaskData';
 import { default as StoreData } from './storeFormJson';
 import { default as LoadStoreData } from '../dataHandling/loadStoreData';
 

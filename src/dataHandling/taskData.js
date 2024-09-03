@@ -1,7 +1,7 @@
 class TaskData {
-    constructor(dataJSON, key) {
+    constructor(dataJSON, id) {
         this.dataJSON = dataJSON;
-        this.key = key;
+        this.id = id;
         this.name = dataJSON['task'];
         this.date = dataJSON['date'];
         this.datetime = dataJSON['datetime'];
@@ -11,6 +11,7 @@ class TaskData {
         this.completed = dataJSON['completed'];
     }
     getDateObj() {
+        console.log(this.date);
         let year = parseInt(this.date.substring(0,4));
         let month = parseInt(this.date.substring(5,7));
         let day = parseInt(this.date.substring(8,10));

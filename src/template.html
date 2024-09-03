@@ -114,7 +114,19 @@
             <div id="projects" class="do-list-container">
                 <div id="do-list-nav">
                     <h1 class="do-list-subtitle">My Projects</h1>
-                    <button id="do-list-options"><img id="do-list-options-img" src="./components/icons/options.svg"></button>
+                    <div id="do-list-options-container">
+                        <button id="do-list-options-btn"><img id="do-list-options-img" src="./components/icons/options.svg"></button>
+                        <dialog id="do-list-options">
+                            <button type="button" class="options-btn">
+                                <img class="options-btn-img" src="./components/icons/trash.svg">
+                                <p class="options-btn-txt">Clear Finished Tasks</p>
+                            </button>
+                            <button type="button" class="options-btn">
+                                <img class="options-btn-img" src="./components/icons/trash.svg">
+                                <p class="options-btn-txt">Clear All Tasks</p>
+                            </button>
+                        </dialog>
+                    </div>
                 </div>
                 <div class="do-list">
                     

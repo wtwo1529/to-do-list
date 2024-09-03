@@ -1,0 +1,78 @@
+dialog:not([open]) { 
+    height: 0% !important; 
+    opacity: 0;
+    overflow: hidden;
+}
+dialog[open] {
+    height: 210% !important;
+    opacity: 1;
+    overflow: hidden;
+}
+#do-list-options {
+    position: absolute;
+    appearance: none;
+    border: 1px rgba(128, 128, 128, 0.35) solid;
+    top: 125%;
+    width: 700%;
+    left: -600%;
+    z-index: 11;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: white;
+}
+.options-btn {
+    padding: 5px 10px;
+    border: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.options-btn-img {
+    width: 20px;
+    height: 20px;
+}
+.options-btn-txt {
+    font-size: 1.1rem;
+}
+.options-btn:hover {
+    background-color: rgba(128, 128, 128, 0.25);
+    transition: background-color 300ms; 
+}
+#do-list-options-container {
+    margin-left: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+#do-list-options-btn {
+    appearance: none;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 7.5px 6px;
+    cursor: pointer;
+}
+#do-list-options-btn:hover {
+    background-color:rgba(128, 128, 128, 0.3) ;
+    transition: background-color 300ms;
+}
+#do-list-options-img {
+    width: 20px;
+    height: 20px;
+}
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    #do-list-options-btn-img {
+        width: 26px;
+        height: 26px;
+    }
+}

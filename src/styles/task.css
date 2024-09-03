@@ -1,0 +1,87 @@
+.do-list-task {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 10px;
+    transition: background-color 300ms;
+    border-radius: 8px;
+    width: 100%;
+}
+.do-list-checkbox {
+    width: 22px;
+    height: 22px;
+}
+.do-list-task-container {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 10px;
+    transition: background-color 300ms;
+    border-radius: 8px;
+    width: 30vw;
+}
+.do-list-task-header {
+    font-weight: 500;
+}
+.do-list-task-subtitle {
+    font-weight: 500;
+}
+.task-date-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: top;
+}
+.task-date-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+}
+@media only screen and (max-width: 600px) {
+    .do-list-task, .do-list-task-container {
+        width: 100%;
+    }
+}
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    .do-list-task, .do-list-task-container {
+        width: 100%;
+    }
+}
+.do-list-task-header {
+    font-size: 1rem;
+    height: 10%;
+}
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    .do-list-subtitle {
+        font-size: 1.4rem;
+    }
+    .do-list-task-header {
+        font-size: 1.3rem;
+        height: 10%;
+    }
+    .do-list-task-subtitle {
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 3px;
+    }
+    .do-list-checkbox {
+        width: 29px;
+        height: 29px;
+    }
+}

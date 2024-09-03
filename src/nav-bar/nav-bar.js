@@ -1,10 +1,12 @@
 import { default as OpenCloseMobileNav } from './openCloseMobile';
+import { default as AddTaskNav } from './add-btn-nav';
 
 class NavBar {
-    constructor(navContainer, openNavBtns, addTaskBtns) {
+    constructor(modalRoot, modal, navContainer, openNavBtns, addTaskBtns) {
         this.navContainer = navContainer;
         this.openNavBtns = openNavBtns;
         this.addTaskBtns = addTaskBtns;
+        this.addTaskNav = new AddTaskNav(modalRoot, modal, addTaskBtns)
         this.init();
     }
     init() {

@@ -12,6 +12,7 @@ class ChangeListContents {
     init() {
         this.loadToday(this.fetchData, this.toDoList, this.todayBtns);
         this.loadUpcoming(this.fetchData, this.toDoList, this.upcomingBtns);
+        this.loadDefault();
     }
     loadDefault() {
         this.pageHeader.textContent = 'Today';
