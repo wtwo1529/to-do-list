@@ -31,7 +31,7 @@
         width: 100%;
     }
 }
-@media only screen and (max-width:961px)  { 
+@media only screen and (min-width:601px)  { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */ 
     .do-list-add-task-btn {
         width: 100%;
@@ -44,7 +44,7 @@
         height: 25px;
     }
 }
-@media only screen and (max-width:1025px) { 
+@media only screen and (min-width:962px) { 
     /* big landscape tablets, laptops, and desktops */ 
     .do-list-add-task-btn {
         width: 100%;

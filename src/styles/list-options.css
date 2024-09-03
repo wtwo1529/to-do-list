@@ -69,7 +69,7 @@ dialog[open] {
     width: 20px;
     height: 20px;
 }
-@media only screen and (max-width:961px)  { 
+@media only screen and (min-width:601px)  { 
     /* tablet, landscape iPad, lo-res laptops ands desktops */ 
     .nav-bar {
         width: 20vw;
@@ -83,7 +83,7 @@ dialog[open] {
         height: 25px;
     }
 }
-@media only screen and (max-width:1025px) { 
+@media only screen and (min-width:962px) { 
     /* big landscape tablets, laptops, and desktops */ 
     #do-list-options {
         width: 700%;
