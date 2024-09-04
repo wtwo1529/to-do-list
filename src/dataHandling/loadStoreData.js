@@ -24,9 +24,17 @@ class LoadStoreData {
         fetchData.sortedData.forEach((data) => {
             if (data['completed'] == "false") {
                 if (data.dateObject > date.setHours(23,59,59,59)) {
-                    ParseJson.loadIntoDom(fetchData, toDoList, data, false, true);
+                    ParseJson.loadIntoDom(fetchData, toDoList, data, false);
                 }
             }
+        })
+    }
+    static loadAllTasks(fetchData, toDoList) {
+        fetchData.init();
+        toDoList.innerHTML = ' ';
+        fetchData.data.forEach((data) => {
+            console.log(data);
+            ParseJson.loadIntoDom(fetchData, toDoList, data, false);
         })
     }
 }

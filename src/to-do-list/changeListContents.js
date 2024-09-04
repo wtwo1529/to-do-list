@@ -1,17 +1,19 @@
 import { default as LoadStoreData } from '../dataHandling/loadStoreData';
 
 class ChangeListContents {
-    constructor(FetchData, toDoList, todayBtns, pageHeader, upcomingBtns) {
+    constructor(FetchData, toDoList, todayBtns, pageHeader, upcomingBtns, allTasksBtns) {
         this.fetchData = FetchData;
         this.toDoList = toDoList;
         this.todayBtns = todayBtns;
         this.pageHeader = pageHeader;
         this.upcomingBtns = upcomingBtns;
+        this.allTasksBtns = allTasksBtns;
         this.init();
     }
     init() {
         this.loadToday(this.fetchData, this.toDoList, this.todayBtns);
         this.loadUpcoming(this.fetchData, this.toDoList, this.upcomingBtns);
+        this.loadAllTasks(this.fetchData, this.toDoList, this.allTasksBtns);
         this.loadDefault();
     }
     loadDefault() {
@@ -31,6 +33,14 @@ class ChangeListContents {
             btn.addEventListener('click', () => {
                 this.pageHeader.textContent = 'Upcoming';
                 LoadStoreData.loadTasksGreaterThanData(fetchData, toDoList, new Date);        
+            })
+        })
+    }
+    loadAllTasks(fetchData, toDoList, btns) {
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                this.pageHeader.textContent = 'All Tasks';
+                LoadStoreData.loadAllTasks(fetchData, toDoList);        
             })
         })
     }

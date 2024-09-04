@@ -6,7 +6,7 @@ import calendar from '../components/icons/do-list-calendar.svg';
 import { default as CompleteTask } from "./completingTask";
 
 class ParseTaskData {
-    static loadIntoDom(fetchData, toDoList, taskData, today=false, upcoming=false) {
+    static loadIntoDom(fetchData, toDoList, taskData, today=false) {
         let taskDiv = document.createElement('div');
         taskDiv.classList.add('do-list-task');
         taskDiv.dataset.id = `${taskData.id}`;
@@ -17,10 +17,10 @@ class ParseTaskData {
         container.classList.add('do-list-task-container')
 
         let checkBox = document.createElement('img');
-        if (taskData.completed == "true") {
+        if (taskData['dataJSON'].completed == "true") {
             checkBox.setAttribute('src', checkedCircleSVG);
         }
-        else {
+        else if (taskData['dataJSON'].completed == "false") {
             checkBox.setAttribute('src', uncheckedCircleSVG);
         }
 
@@ -45,7 +45,7 @@ class ParseTaskData {
             dateIcon.setAttribute('src', clock);
             datetime.textContent = taskData.dateObject.toString().substring(16, 21);
         }
-        else if (upcoming) {
+        else{
             dateIcon.setAttribute('src', calendar);
             datetime.textContent = `${taskData.dateObject.toString().substring(0, 11)} ${taskData.dateObject.toString().substring(16, 21)}`;
         }

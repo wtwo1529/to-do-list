@@ -20,7 +20,8 @@ window.onload = () => {
     let todayPageBtns = document.querySelectorAll('#today-btn');
     let doListHeader = document.querySelector('#do-list-title')
     let upcomingPageBtns = document.querySelectorAll('#upcoming-btn');
-    let toDoList = new ToDoList(fetchData, toDoListElement, todayPageBtns, doListHeader, upcomingPageBtns);
+    let allTasksBtns = document.querySelectorAll('#all-tasks-btn');
+    let toDoList = new ToDoList(fetchData, toDoListElement, todayPageBtns, doListHeader, upcomingPageBtns, allTasksBtns);
     
     let modalRoot = document.querySelector('#modal-root');
     let modal = document.querySelector('#modal');

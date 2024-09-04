@@ -3,8 +3,8 @@ import { default as CompleteTask } from './completingTask';
 import { default as DeleteTask } from '../dataHandling/deleteTask';
 
 class ToDoList {
-    constructor(fetchData, toDoList, todayBtns, pageHeader, upcomingBtns) {
-        this.changeListContents = new ChangeListContents(fetchData, toDoList, todayBtns, pageHeader, upcomingBtns);
+    constructor(fetchData, toDoList, todayBtns, pageHeader, upcomingBtns, allTasksBtns) {
+        this.changeListContents = new ChangeListContents(fetchData, toDoList, todayBtns, pageHeader, upcomingBtns, allTasksBtns);
     
     }
     setUpCheckBox() {
