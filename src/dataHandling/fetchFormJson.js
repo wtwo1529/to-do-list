@@ -44,8 +44,6 @@ class FetchData {
                     keys++;
                     i++;
             }
-            console.log("END")
-
             localStorage.setItem('keys', `${keys}`);
         }
     }

@@ -6,12 +6,12 @@ import calendar from '../components/icons/do-list-calendar.svg';
 import { default as CompleteTask } from "./completingTask";
 
 class ParseTaskData {
-    static loadIntoDom(toDoList, taskData, today=false, upcoming=false) {
+    static loadIntoDom(fetchData, toDoList, taskData, today=false, upcoming=false) {
         let taskDiv = document.createElement('div');
         taskDiv.classList.add('do-list-task');
         taskDiv.dataset.id = `${taskData.id}`;
 
-        CompleteTask.clickCheck(taskDiv);
+        CompleteTask.clickCheck(fetchData, taskDiv);
 
         let container = document.createElement('div');
         container.classList.add('do-list-task-container')

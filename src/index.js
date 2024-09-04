@@ -44,7 +44,8 @@ window.onload = () => {
     let openOptionsBtns = document.querySelectorAll('#do-list-options-btn');
     let clearCheckedTaskBtns = document.querySelectorAll('#clear-finished-tasks-btn')
     let clearTasksBtns = document.querySelectorAll('#clear-tasks-btn');
-    let optionsMenu = new OptionsMenu(fetchData, optionsDialog, openOptionsBtns, clearCheckedTaskBtns, clearTasksBtns);
+    let filterCompletedBtns = document.querySelectorAll('#filter-completed-btn');
+    let optionsMenu = new OptionsMenu(fetchData, optionsDialog, openOptionsBtns, clearCheckedTaskBtns, clearTasksBtns, toDoListElement, filterCompletedBtns);
 
     // document.querySelector('#modal-submit').addEventListener('click', getFormData);
 }

@@ -33,26 +33,35 @@
 }
 #filters-labels-container {
     position: relative;
+    width: 100%;
+}
+#filters-labels-btn {
+    width: 100%;
+}
+.dropdown-indicator-img {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-left: auto;
 }
 #filters-labels-dialog {
     position: absolute;
-    top: 125%;
-    width: 70%;
+    top: 110%;
+    width: 100%;
     appearance: none;
     border: none;
     padding: 15px 0 0 0;
-    background-color: rgba(128, 128, 128, 0.225);
-    border: 1px rgba(128, 128, 128, 0.125) solid;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    transition: height 500ms;
 }
 #filters-labels-dialog:not([open]) {
     height: 0% !important;
     opacity: 0;
     overflow: hidden;
+    transition: height 500ms;
 }
 #filters-labels-dialog[open] {
     height: 100%;
@@ -69,7 +78,6 @@
     background-color: transparent;
     border-radius: 6px;
     padding: 5px 10px;
-    margin-left: 15px;
 }
 #filters-labels-dialog button:hover {
     background-color: rgba(128, 128, 128, 0.25);
