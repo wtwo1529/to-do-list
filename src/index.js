@@ -29,10 +29,8 @@ window.onload = () => {
     let form = document.querySelector('#add-task-form');
     let inputElements = document.querySelectorAll('input');
     let nonRadioInputs = document.querySelectorAll('input:not([type="radio"])');
-    let radioInputs = document.querySelectorAll('input[type="radio"]');
     let taskNameInputs = document.querySelectorAll('#task-name-input');
-    let modalLogic = new Modal(fetchData, modalRoot, modal, addTaskBtns, form, inputElements, nonRadioInputs, radioInputs, doListHeader, taskNameInputs);
-    
+    let modalLogic = new Modal(fetchData, toDoListElement, modalRoot, modal, addTaskBtns, form, inputElements, nonRadioInputs, doListHeader, taskNameInputs);
     
     let navAddTaskBtns = document.querySelectorAll('.nav-btn#add-task-btn')
     let navContainer = document.querySelector('.mobile-nav-container');

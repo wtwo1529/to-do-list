@@ -32,7 +32,6 @@ class LoadStoreData {
             this.toDoList.innerHTML = ' ';
         }
         this.fetchData.sortedData.forEach((data) => {
-            console.log(data['dataJSON']['completed']);
             if (completed == false) {
                 if (data['dataJSON']['completed'] == "false" && data.dateObject > date.setHours(23,59,59,59)) {
                     renderTask(this.fetchData, this.toDoList, data, false);

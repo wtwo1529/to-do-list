@@ -5,7 +5,7 @@ import { default as StoreData } from './storeFormJson';
 import { default as LoadStoreData } from '../dataHandling/loadStoreData';
 
 class FormHandler {
-    constructor(FetchData, modalRoot, modal, openModalBtns, formElement, inputElements, nonRadioInputs, listHeader) {
+    constructor(FetchData, toDoList, modalRoot, modal, openModalBtns, formElement, inputElements, nonRadioInputs, listHeader) {
         this.fetchData = FetchData;
         this.modalRoot = modalRoot;
         this.modal = modal;
@@ -14,7 +14,7 @@ class FormHandler {
         this.inputElements = inputElements;
         this.nonRadioInputs = nonRadioInputs;
         this.listHeader = listHeader; 
-        
+        this.loadStoreData = new LoadStoreData(FetchData, toDoList)
         this.storeData = new StoreData;
 
         this.init();
@@ -50,16 +50,17 @@ class FormHandler {
             event.preventDefault();
             if (FormValidator.validateForm(this.nonRadioInputs)) {
                 OpenCloseModal.closeModal(this.modalRoot, this.modal);
-                let toDoList = document.querySelector('.do-list');
                 let formDataJSON = this.getFormData();
                 let checkedRadios = document.querySelectorAll('input[type="radio"]:checked');
                 ModalEvents.clearInputs(this.nonRadioInputs, checkedRadios);
                 this.storeData.addToLocal(formDataJSON);
+                this.fetchData.init();
+                let todayDate = new Date();
                 if (this.listHeader.textContent == "Today") {
-                    LoadStoreData.loadTasksOfDate(this.fetchData, toDoList, new Date);
+                    this.loadStoreData.loadTasksOfDate(todayDate);
                 }
                 else if (this.listHeader.textContent == "Upcoming") {
-                    LoadStoreData.loadTasksGreaterThanData(this.fetchData, toDoList, new Date);
+                    this.loadStoreData.loadTasksOverDate(todayDate);
                 }
             }
         });
