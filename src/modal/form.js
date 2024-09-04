@@ -1,6 +1,5 @@
 import { default as FormHandler } from './formHandler';
 import { default as FormValidator } from './formValidator';
-import { default as RadioInput } from './radioInput';
 
 class Form {
     constructor(fetchData, modalRoot, modal, openModalBtns, formElement, inputElements, nonRadioInputs, radioInputs, listHeader) {
