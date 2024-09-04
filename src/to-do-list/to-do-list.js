@@ -1,5 +1,5 @@
 import { default as ChangeListContents } from './changeListContents';
-import { default as CompleteTask } from './completingTask';
+import { default as CompleteTask } from './clickCheckbox';
 import { default as DeleteTask } from '../dataHandling/deleteTask';
 
 class ToDoList {

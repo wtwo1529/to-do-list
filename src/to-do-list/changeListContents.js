@@ -2,8 +2,7 @@ import { default as LoadStoreData } from '../dataHandling/loadStoreData';
 
 class ChangeListContents {
     constructor(FetchData, toDoList, todayBtns, pageHeader, upcomingBtns, allTasksBtns) {
-        this.fetchData = FetchData;
-        this.toDoList = toDoList;
+        this.loadStoreData = new LoadStoreData(FetchData, toDoList)
         this.todayBtns = todayBtns;
         this.pageHeader = pageHeader;
         this.upcomingBtns = upcomingBtns;
@@ -11,36 +10,41 @@ class ChangeListContents {
         this.init();
     }
     init() {
-        this.loadToday(this.fetchData, this.toDoList, this.todayBtns);
-        this.loadUpcoming(this.fetchData, this.toDoList, this.upcomingBtns);
-        this.loadAllTasks(this.fetchData, this.toDoList, this.allTasksBtns);
-        this.loadDefault();
+        let today = new Date();
+        this.setRenderTasksOfDate(this.todayBtns, today, "Today");
+        this.setRenderTasksOverDate(this.upcomingBtns, today, "Upcoming");
+        this.setRenderAllTasks(this.allTasksBtns);
+        this.renderDefault();
     }
-    loadDefault() {
-        this.pageHeader.textContent = 'Today';
-        LoadStoreData.loadTasksOfDate(this.fetchData, this.toDoList, new Date);        
+    renderDefault() {
+        let today = new Date();
+        this.loadStoreData.loadTasksOfDate(today);
     }
-    loadToday(fetchData, toDoList, btns) {
+    setRenderTasksOfDate(btns, date, headerText=false) {
         btns.forEach(btn => {
             btn.addEventListener('click', () => {
-                this.pageHeader.textContent = 'Today';
-                LoadStoreData.loadTasksOfDate(fetchData, toDoList, new Date);        
-            })
-        });
-    }
-    loadUpcoming(fetchData, toDoList, btns) {
-        btns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                this.pageHeader.textContent = 'Upcoming';
-                LoadStoreData.loadTasksGreaterThanData(fetchData, toDoList, new Date);        
+                if (headerText) {
+                    this.pageHeader.textContent = `${headerText}` 
+                }
+                this.loadStoreData.loadTasksOfDate(date);        
             })
         })
     }
-    loadAllTasks(fetchData, toDoList, btns) {
+    setRenderTasksOverDate(btns, date, headerText=false) {
         btns.forEach(btn => {
             btn.addEventListener('click', () => {
-                this.pageHeader.textContent = 'All Tasks';
-                LoadStoreData.loadAllTasks(fetchData, toDoList);        
+                if (headerText) {
+                    this.pageHeader.textContent = `${headerText}`;
+                }
+                this.loadStoreData.loadTasksOverDate(date);        
+            })
+        })
+    }
+    setRenderAllTasks(btns) {
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                this.pageHeader.textContent = "All Tasks";
+                this.loadStoreData.loadAllTasks(); 
             })
         })
     }

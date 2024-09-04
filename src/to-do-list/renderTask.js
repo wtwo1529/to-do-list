@@ -3,15 +3,15 @@ import checkedCircleSVG from '../components/icons/checked-circle.svg';
 import clock from '../components/icons/do-list-time.svg';
 import calendar from '../components/icons/do-list-calendar.svg';
 
-import { default as CompleteTask } from "./completingTask";
+import { default as clickCheckEvent } from "./clickCheckbox";
 
-class ParseTaskData {
-    static loadIntoDom(fetchData, toDoList, taskData, today=false) {
+
+function renderTask(fetchData, toDoList, taskData, today=false) {
         let taskDiv = document.createElement('div');
         taskDiv.classList.add('do-list-task');
         taskDiv.dataset.id = `${taskData.id}`;
 
-        CompleteTask.clickCheck(fetchData, taskDiv);
+        clickCheckEvent(fetchData, taskDiv);
 
         let container = document.createElement('div');
         container.classList.add('do-list-task-container')
@@ -60,6 +60,6 @@ class ParseTaskData {
 
         toDoList.appendChild(taskDiv);
     }
-}
 
-export default ParseTaskData;
+
+export default renderTask;
