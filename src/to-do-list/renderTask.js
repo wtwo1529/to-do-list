@@ -46,9 +46,29 @@ function renderTask(fetchData, toDoList, taskData, today=false) {
             dateIcon.setAttribute('src', clock);
             datetime.textContent = taskData.dateObject.toString().substring(16, 21);
         }
-        else{
+        else {
+            const yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            yesterday.setHours(0,0,0,0);
+
+            const today = new Date();
+            today.setHours(0,0,0,0);
+
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(23,59,59,59);
+
+            let date = taskData.dateObject;
             dateIcon.setAttribute('src', calendar);
-            datetime.textContent = `${taskData.dateObject.toString().substring(0, 11)} ${taskData.dateObject.toString().substring(16, 21)}`;
+            if (date > today && date < tomorrow) {
+                datetime.textContent = `Tomorrow ${taskData.dateObject.toString().substring(16, 21)}`;
+            }
+            else if (date < today && date > yesterday) {
+                datetime.textContent = `Yesterday ${taskData.dateObject.toString().substring(16, 21)}`;
+            }
+            else {
+                datetime.textContent = `${date.toString().substring(0, 11)} ${taskData.dateObject.toString().substring(16, 21)}`;
+            }
         }
 
         dateDiv.appendChild(dateIcon);

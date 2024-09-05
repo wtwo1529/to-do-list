@@ -2,29 +2,30 @@ import downArrow from '../components/icons/down-arrowhead.svg';
 import upArrow from '../components/icons/up-arrowhead.svg';
 
 class OpenCloseDialog {
-    constructor(dialogElement, openBtns) {
+    constructor(dialogElement, openBtns, arrowheadElement) {
         this.dialogElement = dialogElement;
         this.openBtns = openBtns;
         this.dialogOpened = false;
+        this.arrowheadElement = arrowheadElement;
         this.init();
     }
     init() {
-        this.openCloseDialog();
+        this.openCloseDialog(this.arrowheadElement);
         return;
     }
-    openCloseDialog() {
+    openCloseDialog(arrowhead) {
         this.openBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 e.stopImmediatePropagation();
-
+                
                 if (!this.dialogOpened) {
-                    document.querySelector('.dropdown-indicator-img').setAttribute('src', downArrow);
+                    this.arrowheadElement.setAttribute('src', downArrow);
                     this.dialogElement.show();
                     this.dialogOpened = true;
                 }
                 else {
-                    document.querySelector('.dropdown-indicator-img').setAttribute('src', upArrow);
+                    this.arrowheadElement.setAttribute('src', upArrow);
                     this.dialogElement.close();
                     this.dialogOpened = false;
                 }

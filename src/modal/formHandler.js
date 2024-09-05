@@ -62,6 +62,9 @@ class FormHandler {
                 else if (this.listHeader.textContent == "Upcoming") {
                     this.loadStoreData.loadTasksOverDate(todayDate);
                 }
+                else {
+                    this.loadStoreData.loadAllTasks();
+                }
             }
         });
     }

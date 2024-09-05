@@ -37,14 +37,19 @@ window.onload = () => {
     let openNavBtns = document.querySelectorAll('#sidebar-menu-btn');
     let filtersLabelsDialog = document.querySelector('#filters-labels-dialog');
     let openFiltersLabelsBtns = document.querySelectorAll('#filters-labels-btn');
-    let navBar = new NavBar(modalRoot, modal, navContainer, openNavBtns, navAddTaskBtns, filtersLabelsDialog, openFiltersLabelsBtns);
+    let searchBarBtns = document.querySelectorAll('#search-btn');
+    let navBar = new NavBar(modalRoot, modal, navContainer, openNavBtns, navAddTaskBtns, filtersLabelsDialog, openFiltersLabelsBtns, doListHeader, toDoListElement, searchBarBtns);
     
     let optionsDialog = document.querySelector('#do-list-options');
     let openOptionsBtns = document.querySelectorAll('#do-list-options-btn');
     let clearCheckedTaskBtns = document.querySelectorAll('#clear-finished-tasks-btn')
     let clearTasksBtns = document.querySelectorAll('#clear-tasks-btn');
     let filterCompletedBtns = document.querySelectorAll('#filter-completed-btn');
-    let optionsMenu = new OptionsMenu(fetchData, optionsDialog, openOptionsBtns, clearCheckedTaskBtns, clearTasksBtns, toDoListElement, filterCompletedBtns);
+    let filtersArrowhead = document.querySelector('#filters-labels-arrowhead');
+    let projectsDialog = document.querySelector('#projects-dialog');
+    let openProjectsBtns = document.querySelectorAll('#projects-btn');
+    let projectsArrowhead = document.querySelector('#projects-arrowhead');
+    let optionsMenu = new OptionsMenu(fetchData, projectsDialog, openProjectsBtns, clearCheckedTaskBtns, clearTasksBtns, toDoListElement, filterCompletedBtns, projectsArrowhead);
 
     // document.querySelector('#modal-submit').addEventListener('click', getFormData);
 }

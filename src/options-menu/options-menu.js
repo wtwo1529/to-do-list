@@ -4,8 +4,8 @@ import { default as ClearTasks } from './clearTasks.js';
 import { default as clearIncompleteTasks } from './clearIncompleteTasks.js';
 
 class OptionsMenu {
-    constructor(fetchData, dialogElement, openDialogBtns, clearCheckedTasksBtns, clearTasksBtns, toDoList, filterCompletedBtns) {
-        this.openCloseDialog = new OpenCloseDialog(dialogElement, openDialogBtns);
+    constructor(fetchData, projectsDialog, openCloseProjectsBtns, clearCheckedTasksBtns, clearTasksBtns, toDoList, filterCompletedBtns, projectsArrowhead) {
+        this.openCloseProjectsDialog = new OpenCloseDialog(projectsDialog, openCloseProjectsBtns, projectsArrowhead);
         this.clearCheckedTasks = new ClearCheckedTasks(fetchData);
         this.clearTasks = new ClearTasks(fetchData, this.clearCheckedTasks);
         this.init(fetchData, toDoList, clearCheckedTasksBtns, clearTasksBtns, filterCompletedBtns);

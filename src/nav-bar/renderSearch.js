@@ -1,13 +1,13 @@
-function renderSearch(doListTitle, doListElement) {
-    doListTitle.textContent = "Search"
-    doListElement.innerHTML = " ";
+// function renderSearch(doListTitle, doListElement) {
+//     doListTitle.textContent = "Search"
+//     doListElement.innerHTML = " ";
 
-    let searchBar = document.createElement('input');
-    searchBar.type = "text";
-    searchBar.placeholder = "Search.."
-    searchBar.addEventListener()
+//     let searchBar = document.createElement('input');
+//     searchBar.type = "text";
+//     searchBar.placeholder = "Search.."
+//     // searchBar.addEventListener()
 
-    doListElement.appendChild(searchBar);
-}
+//     doListElement.appendChild(searchBar);
+// }
 
-export default renderSearch;
+// export default renderSearch;

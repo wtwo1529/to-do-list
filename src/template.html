@@ -53,10 +53,10 @@
                 <img class="nav-icon" src="components/icons/add-task.svg">
                 <p>Add Task</p>
             </button>
-            <button type="button" class="nav-btn">
+            <!-- <button type="button" id="search-btn" class="nav-btn">
                 <img class="nav-icon" src="components/icons/search.svg">
                 <p>Search</p>
-            </button>
+            </button> -->
             <!-- <button type="button" class="nav-btn">
                 <img class="nav-icon" src="components/icons/inbox.png">
                 <p>Inbox</p>
@@ -73,23 +73,18 @@
                 <img class="nav-icon" src="components/icons/upcoming.png">
                 <p>Upcoming</p>
             </button>
-            <div id="filters-labels-container">
-                <button type="button" id="filters-labels-btn" class="nav-btn">
-                    <img class="nav-icon" src="components/icons/filters-labels.png">
-                    <p>Filters & Labels</p>
-                    <img class="dropdown-indicator-img" src="./components/icons/up-arrowhead.svg">
+            <div id="projects-container" class="sidebar-dropdown-container">
+                <button type="button" id="projects-btn" class="nav-btn sidebar-dropdown-btn">
+                    <img class="nav-icon" src="components/icons/projects.png">
+                    <p>Projects</p>
+                    <img id="projects-arrowhead" class="dropdown-indicator-img" src="./components/icons/up-arrowhead.svg">
                 </button>
-                <dialog id="filters-labels-dialog">
+                <dialog id="projects-dialog" class="sidebar-dropdown">
                     <button>
-                        <img class="btn-icon" src="./components/icons/completed-icon.svg">
-                        <p id="filter-completed-btn" class="btn-text">Completed</p>
-                    </button>
-                    <button>
-                        <img class="btn-icon" src="./components/icons/expired.svg">
-                        <p id="filter-expired-btn" class="btn-text">Expired</p>
+                        <img class="btn-icon" src="./components/icons/add-task.svg">
+                        <p id="add-project-btn" class="btn-text">Add Project</p>
                     </button>
                 </dialog>
-
             </div>
         </nav>
         <div class="mobile-nav-container">
@@ -98,10 +93,10 @@
                     <img class="nav-icon" src="components/icons/add-task.svg">
                     <p class="mobile-nav-txt">Add Task</p>
                 </button>
-                <button type="button" class="nav-btn mobile-nav-btn">
+                <!-- <button type="button" class="nav-btn mobile-nav-btn">
                     <img class="nav-icon" src="components/icons/search.svg">
                     <p class="mobile-nav-txt">Search</p>
-                </button>
+                </button> -->
                 <!-- <button type="button" class="nav-btn">
                     <img class="nav-icon" src="components/icons/inbox.png">
                     <p>Inbox</p>
