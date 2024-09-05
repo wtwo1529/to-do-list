@@ -8,17 +8,17 @@ class OptionsMenu {
         this.openCloseDialog = new OpenCloseDialog(dialogElement, openDialogBtns);
         this.clearCheckedTasks = new ClearCheckedTasks(fetchData);
         this.clearTasks = new ClearTasks(fetchData, this.clearCheckedTasks);
-        this.init(clearCheckedTasksBtns, clearTasksBtns, filterCompletedBtns);
+        this.init(fetchData, toDoList, clearCheckedTasksBtns, clearTasksBtns, filterCompletedBtns);
     }
-    init(clearCheckedTaskBtns, clearTasksBtns, filterCompletedBtns) {
-        this.setFilterCompleted(filterCompletedBtns);
+    init(fetchData, toDoList, clearCheckedTaskBtns, clearTasksBtns, filterCompletedBtns) {
+        this.setFilterCompleted(fetchData, toDoList, filterCompletedBtns);
         this.setClearCheckedTasks(clearCheckedTaskBtns);
         this.setClearTasks(clearTasksBtns);
     }
-    setFilterCompleted(btns) {
+    setFilterCompleted(fetchData, toDoList, btns) {
         btns.forEach(btn => {
             btn.addEventListener('click', () => {
-                clearIncompleteTasks();
+                clearIncompleteTasks(fetchData, toDoList);
             })
         })
     }

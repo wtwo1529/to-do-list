@@ -18,7 +18,7 @@ class ClearCheckedTasks {
     clear() {
         let checkedTasks = this.getCheckedTasks();
         checkedTasks.forEach(checkedTask => {
-            this.completeTask(checkedTask);
+            // this.completeTask(checkedTask);
             this.removeFromDOM(checkedTask);
         })
     }

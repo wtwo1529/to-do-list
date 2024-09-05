@@ -6,16 +6,16 @@ function clickCheckEvent(fetchData, taskElement) {
         let id = parseInt(taskElement.dataset.id);
         if (e.target.matches('.do-list-checkbox')) {
             if (e.target.src == checkedCircle) {
-                let data = fetchData.idToObj.get(id)['dataJSON']; 
-                data['completed'] = "false";
-                console.log(fetchData.idToObj.get(id)['dataJSON'])
+                fetchData.idToObj.get(id).completed = "false";
+                let dataJSON = fetchData.idToObj.get(id).updateJson();
+                localStorage.setItem(`${id}`, JSON.stringify(dataJSON));
                 e.target.setAttribute('src', uncheckedCircle);
                 taskElement.classList.remove('checked-task');
             }
             else {
-                let data = fetchData.idToObj.get(id)['dataJSON']; 
-                data['completed'] = "true";
-                console.log(fetchData.idToObj.get(id)['dataJSON'])
+                fetchData.idToObj.get(id).completed = "true";
+                let dataJSON = fetchData.idToObj.get(id).updateJson();
+                localStorage.setItem(`${id}`, JSON.stringify(dataJSON));
                 e.target.setAttribute('src', checkedCircle);
                 taskElement.classList.add('checked-task');
             }

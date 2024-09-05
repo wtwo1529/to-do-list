@@ -19,6 +19,7 @@ function renderTask(fetchData, toDoList, taskData, today=false) {
         let checkBox = document.createElement('img');
         if (taskData['dataJSON'].completed == "true") {
             checkBox.setAttribute('src', checkedCircleSVG);
+            taskDiv.classList.add('checked-task');
         }
         else if (taskData['dataJSON'].completed == "false") {
             checkBox.setAttribute('src', uncheckedCircleSVG);
